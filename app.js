@@ -10,12 +10,16 @@ const passport = require('passport');
 const bodyparser = require(`body-parser`)
 const flash = require('connect-flash');
 const session = require('express-session');
+require('dotenv').config() 
+console.log(process.env)
+
+const api = process.env.Mongo_Api ;
 // Passport Config
 require('./config/passport')(passport);
 // db config 
 const db = require(`./config/key`).MongoURI;
 // connect mongo 
-mongoose.connect( "mongodb+srv://vaibhavpa:dmtUxO1tVtvwTHxI@cluster0.rk1ef.mongodb.net/vaibhavpa?retryWrites=true&w=majority"
+mongoose.connect( api
 , {useNewUrlParser:true , useUnifiedTopology: true   })
 .then(()=>console.log("..mongo connected"))
 .catch(err=> console.log(err)) ;
