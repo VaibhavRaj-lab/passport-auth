@@ -24,6 +24,7 @@ mongoose.connect( api
 .then(()=>console.log("..mongo connected"))
 .catch(err=> console.log(err)) ;
 
+
 // EJS
 app.use(expressLayouts)
 app.set(`view engine`, `ejs`)
