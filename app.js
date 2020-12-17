@@ -16,8 +16,7 @@ console.log(process.env)
 const api = process.env.Mongo_Api ;
 // Passport Config
 require('./config/passport')(passport);
-// db config 
-const db = require(`./config/key`).MongoURI;
+
 // connect mongo 
 mongoose.connect( api
 , {useNewUrlParser:true , useUnifiedTopology: true   })
